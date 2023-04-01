@@ -1,9 +1,9 @@
 import { styled } from "@/styles";
 
 
-export const TitleText = styled('header', {
+export const TitleText = styled('h1', {
     color: 'white',
     fontSize: 32,
-    padding: '30px 15px',
+    padding: '10px 0px',
     fontWeight: 'bold'
 })

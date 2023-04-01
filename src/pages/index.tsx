@@ -1,6 +1,12 @@
 import HeaderComponent from '@/components/Header'
+import SearchInput from '@/components/SearchInput'
 import Title from '@/components/Title'
+import { styled } from '@/styles'
 import Head from 'next/head'
+
+const Container = styled('main', {
+  padding: '0px 15px'
+})
 
 export default function Home() {
   return (
@@ -13,7 +19,10 @@ export default function Home() {
       </Head>
       <main>
         <HeaderComponent />
-        <Title>Busque por um personagem</Title>
+        <Container>
+          <Title>Busque por um personagem</Title>
+          <SearchInput />
+        </Container>
       </main>
     </>
   )
