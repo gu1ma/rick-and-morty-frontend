@@ -14,7 +14,9 @@ export interface ICharacter {
 
 interface ICharactersContext {
   characters: ICharacter[];
-  getAllCharacters: () => void;
+  getCharacters: (page: number) => void;
+  setPage: (page: number) => void;
+  page: number;
 }
 
 export const CharactersContext = React.createContext<ICharactersContext>(
@@ -23,21 +25,22 @@ export const CharactersContext = React.createContext<ICharactersContext>(
 
 export const CharactersProvider = ({ children }: ICharactersContextProps) => {
   const [characters, setCharacters] = useState<ICharacter[]>([]);
+  const [page, setPage] = useState(1)
 
-  const getAllCharacters = useCallback(() => {
-    getCharactersApi()
+  const getCharacters = useCallback(() => {
+    getCharactersApi(page)
       .then(result => {
-        setCharacters(result.data.results)
+        setCharacters([...characters, ...result.data.results])
       })
-  }, []);
+  }, [page]);
 
   useEffect(() => {
-    getAllCharacters()
-  }, [getAllCharacters])
+    getCharacters()
+  }, [getCharacters, page])
 
   return (
     <CharactersContext.Provider
-      value={{ characters, getAllCharacters }}
+      value={{ characters, getCharacters, page, setPage }}
     >
       {children}
     </CharactersContext.Provider>

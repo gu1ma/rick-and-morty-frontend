@@ -7,6 +7,7 @@ import { CharactersContext, ICharacter } from '@/providers/characters'
 import { styled } from '@/styles'
 import Head from 'next/head'
 import { useContext } from 'react'
+import { useBottomScrollListener } from 'react-bottom-scroll-listener'
 
 const Container = styled('main', {
   padding: '0px 15px'
@@ -25,7 +26,12 @@ const ContainerCharacter = styled('main', {
 })
 
 export default function Home() {
-  const { characters } = useContext(CharactersContext);
+  const { characters, page, setPage } = useContext(CharactersContext);
+
+  const scrollRef = useBottomScrollListener(() => setPage(page + 1), {
+    offset: 0,
+    debounce: 200
+  })
 
   return (
     <>
