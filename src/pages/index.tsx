@@ -1,4 +1,5 @@
 import HeaderComponent from '@/components/header'
+import Title from '@/components/Title'
 import Head from 'next/head'
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <HeaderComponent />
+        <Title />
       </main>
     </>
   )
