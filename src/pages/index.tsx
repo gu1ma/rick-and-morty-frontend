@@ -3,8 +3,10 @@ import Character from '@/components/Character'
 import HeaderComponent from '@/components/Header'
 import SearchInput from '@/components/SearchInput'
 import Title from '@/components/Title'
+import { getCharactersApi } from '@/services'
 import { styled } from '@/styles'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 
 const Container = styled('main', {
   padding: '0px 15px'
@@ -23,6 +25,25 @@ const ContainerCharacter = styled('main', {
 })
 
 export default function Home() {
+
+  const [characters, setCharacters] = useState([]);
+
+  const getCharacters = async () => {
+    const characters = await getCharactersApi();
+    setCharacters(characters.data.results)
+  }
+
+  useEffect(() => {
+    getCharacters();
+  }, [])
+
+  interface characterProps {
+    id: number,
+    name: string, 
+    image: string, 
+    species: string
+  }
+
   return (
     <>
       <Head>
@@ -41,12 +62,12 @@ export default function Home() {
           </ContainerSearch>
           <ContainerCharacter>
             {
-            [1,2,3,4,5,6,7,8].map(el => (
+            characters.map(({ id, image, name, species }: characterProps) => (
               <Character 
-                key={el}
-                imgUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-                name="Rick"
-                desc="Desc"
+                key={id}
+                imgUrl={image}
+                name={name}
+                desc={species}
               />
             ))}
           </ContainerCharacter>

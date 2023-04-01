@@ -8,11 +8,16 @@ export const Container = styled('div', {
     alignItems: 'center',
     img: {
         borderRadius: 10,
+        width: '100%',
+        height: 300
     },
     h2: {
         color: 'white',
         fontSize: 28,
         marginTop: 5,
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis'
     }, 
     p: {
         color: "$secondary"
