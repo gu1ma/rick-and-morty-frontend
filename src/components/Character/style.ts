@@ -9,7 +9,6 @@ export const Container = styled('div', {
     img: {
         borderRadius: 10,
         width: '100%',
-        maxWidth: 250,
         height: 300
     },
     h2: {

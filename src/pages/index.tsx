@@ -47,7 +47,7 @@ export default function Home() {
         <Title>Busque por um personagem</Title>
           <ContainerSearch>
             <SearchInput />
-            <Button>Buscar</Button>
+            {/* <Button>Buscar</Button> */}
           </ContainerSearch>
           <ContainerCharacter>
             {
