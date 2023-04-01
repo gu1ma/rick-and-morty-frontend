@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <HeaderComponent />
-        <Title />
+        <Title>Busque por um personagem</Title>
       </main>
     </>
   )

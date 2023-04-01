@@ -1,7 +1,11 @@
 import { TitleText } from "./style";
 
-export default function Title() {
+interface TitleType {
+    children: String
+}
+
+export default function Title({ children }: TitleType) {
     return (
-        <TitleText>Busque por um personagem</TitleText>
+        <TitleText>{ children }</TitleText>
     )
 }
