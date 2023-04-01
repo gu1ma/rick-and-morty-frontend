@@ -3,10 +3,10 @@ import Character from '@/components/Character'
 import HeaderComponent from '@/components/Header'
 import SearchInput from '@/components/SearchInput'
 import Title from '@/components/Title'
-import { getCharactersApi } from '@/services'
+import { CharactersContext, ICharacter } from '@/providers/characters'
 import { styled } from '@/styles'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
 
 const Container = styled('main', {
   padding: '0px 15px'
@@ -25,24 +25,7 @@ const ContainerCharacter = styled('main', {
 })
 
 export default function Home() {
-
-  const [characters, setCharacters] = useState([]);
-
-  const getCharacters = async () => {
-    const characters = await getCharactersApi();
-    setCharacters(characters.data.results)
-  }
-
-  useEffect(() => {
-    getCharacters();
-  }, [])
-
-  interface characterProps {
-    id: number,
-    name: string, 
-    image: string, 
-    species: string
-  }
+  const { characters } = useContext(CharactersContext);
 
   return (
     <>
@@ -62,7 +45,7 @@ export default function Home() {
           </ContainerSearch>
           <ContainerCharacter>
             {
-            characters.map(({ id, image, name, species }: characterProps) => (
+            characters.map(({ id, image, name, species }: ICharacter) => (
               <Character 
                 key={id}
                 imgUrl={image}
