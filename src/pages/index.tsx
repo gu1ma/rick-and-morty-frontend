@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import HeaderComponent from '@/components/Header'
 import SearchInput from '@/components/SearchInput'
 import Title from '@/components/Title'
@@ -22,6 +23,7 @@ export default function Home() {
         <Container>
           <Title>Busque por um personagem</Title>
           <SearchInput />
+          <Button>Buscar</Button>
         </Container>
       </main>
     </>

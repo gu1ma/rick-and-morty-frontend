@@ -14,7 +14,9 @@ export const {
     theme: {
         colors: {
             primary: '#2D3748',
-            primaryDark: '#1A202C' 
+            primaryDark: '#1A202C',
+            secondary: '#6DAB6C',
+            secondaryDark: '#1b6f20',
         }
     }
 })
