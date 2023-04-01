@@ -1,7 +1,7 @@
 import { TitleText } from "./style";
 
 interface TitleProps {
-    children: String
+    children: string
 }
 
 export default function Title({ children }: TitleProps) {

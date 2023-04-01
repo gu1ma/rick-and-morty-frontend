@@ -1,4 +1,5 @@
 import Button from '@/components/Button'
+import Character from '@/components/Character'
 import HeaderComponent from '@/components/Header'
 import SearchInput from '@/components/SearchInput'
 import Title from '@/components/Title'
@@ -7,6 +8,18 @@ import Head from 'next/head'
 
 const Container = styled('main', {
   padding: '0px 15px'
+})
+
+const ContainerSearch = styled('section', {
+  display: 'flex'
+})
+
+const ContainerCharacter = styled('main', {
+  display: 'grid',
+  columnGap: 50,
+  rowGap: 30,
+  gridTemplateColumns: '1fr 1fr 1fr 1fr',
+  marginTop: 32,
 })
 
 export default function Home() {
@@ -21,9 +34,22 @@ export default function Home() {
       <main>
         <HeaderComponent />
         <Container>
-          <Title>Busque por um personagem</Title>
-          <SearchInput />
-          <Button>Buscar</Button>
+        <Title>Busque por um personagem</Title>
+          <ContainerSearch>
+            <SearchInput />
+            <Button>Buscar</Button>
+          </ContainerSearch>
+          <ContainerCharacter>
+            {
+            [1,2,3,4,5,6,7,8].map(el => (
+              <Character 
+                key={el}
+                imgUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                name="Rick"
+                desc="Desc"
+              />
+            ))}
+          </ContainerCharacter>
         </Container>
       </main>
     </>

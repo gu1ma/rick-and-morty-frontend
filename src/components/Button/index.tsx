@@ -1,7 +1,7 @@
 import { ButtonEl } from "./style";
 
 interface ButtonProps {
-    children: String
+    children: string
 }
 
 export default function Button({ children }: ButtonProps) {
