@@ -1,4 +1,4 @@
-import HeaderComponent from '@/components/header'
+import HeaderComponent from '@/components/Header'
 import Title from '@/components/Title'
 import Head from 'next/head'
 
