@@ -28,7 +28,7 @@ const ContainerCharacter = styled('main', {
 export default function Home() {
   const { characters, page, setPage } = useContext(CharactersContext);
 
-  const scrollRef = useBottomScrollListener(() => setPage(page + 1), {
+  useBottomScrollListener(() => setPage(page + 1), {
     offset: 0,
     debounce: 200
   })

@@ -9,6 +9,7 @@ export const Container = styled('div', {
     img: {
         borderRadius: 10,
         width: '100%',
+        maxWidth: 250,
         height: 300
     },
     h2: {
@@ -17,7 +18,8 @@ export const Container = styled('div', {
         marginTop: 5,
         whiteSpace: 'nowrap',
         overflow: 'hidden',
-        textOverflow: 'ellipsis'
+        textOverflow: 'ellipsis',
+        maxWidth: 250
     }, 
     p: {
         color: "$secondary"
