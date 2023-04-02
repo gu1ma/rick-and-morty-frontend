@@ -21,11 +21,23 @@ const ContainerCharacter = styled('main', {
   display: 'grid',
   columnGap: 50,
   rowGap: 30,
-  gridTemplateColumns: '1fr 1fr 1fr 1fr',
+  gridTemplateColumns: '1fr',
   marginTop: 32,
 
   a: {
     color: 'transparent'
+  },
+  '@smallMobile': {
+    gridTemplateColumns: '1fr 1fr',
+  },
+  '@mobile': {
+    gridTemplateColumns: '1fr 1fr',
+  },
+  '@tablet': {
+    gridTemplateColumns: '1fr 1fr 1fr',
+  },
+  '@desktop': {
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
   }
 })
 
