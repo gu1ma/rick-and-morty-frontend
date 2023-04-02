@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import { Container, Name, ContainerCharacter, Description } from "./style";
 
-export default function CharacterResume() {
+export default function Character() {
 
   const { query } = useRouter()
   const { id } = query;

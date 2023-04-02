@@ -7,6 +7,8 @@ import Head from 'next/head'
 import { useContext } from 'react'
 import { useBottomScrollListener } from 'react-bottom-scroll-listener'
 
+import Link from 'next/link'
+
 const Container = styled('main', {
   padding: '0px 15px'
 })
@@ -21,6 +23,10 @@ const ContainerCharacter = styled('main', {
   rowGap: 30,
   gridTemplateColumns: '1fr 1fr 1fr 1fr',
   marginTop: 32,
+
+  a: {
+    color: 'transparent'
+  }
 })
 
 export default function Home() {
@@ -45,12 +51,13 @@ export default function Home() {
           <ContainerCharacter>
             {
             characters.map(({ id, image, name, species }: ICharacter) => (
-              <Character 
-                key={id}
-                imgUrl={image}
-                name={name}
-                desc={species}
-              />
+              <Link href={`/character/${id}`} key={id}>
+                <Character 
+                  imgUrl={image}
+                  name={name}
+                  desc={species}
+                />
+              </Link>
             ))}
           </ContainerCharacter>
         </Container>
