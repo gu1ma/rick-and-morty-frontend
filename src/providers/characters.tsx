@@ -9,7 +9,10 @@ export interface ICharacter {
   id: number,
   name: string, 
   image: string, 
-  species: string
+  species: string,
+  gender: string,
+  status: string, 
+  type: string,
 }
 
 interface ICharactersContext {
@@ -18,6 +21,7 @@ interface ICharactersContext {
   setSearchName: (name: string) => void;
   setPage: (page: number) => void;
   page: number;
+  filterCharacterById: (id: number) => object | undefined;
 }
 
 export const CharactersContext = React.createContext<ICharactersContext>(
@@ -42,6 +46,8 @@ export const CharactersProvider = ({ children }: ICharactersContextProps) => {
     })
   }, [searchName])
 
+  const filterCharacterById = (id: number) => characters.find(character => character.id == id)
+
   useEffect(() => {
     getCharacters()
   }, [getCharacters, page])
@@ -52,7 +58,7 @@ export const CharactersProvider = ({ children }: ICharactersContextProps) => {
 
   return (
     <CharactersContext.Provider
-      value={{ characters, getCharacters, page, setPage, setSearchName }}
+      value={{ characters, getCharacters, page, setPage, setSearchName, filterCharacterById }}
     >
       {children}
     </CharactersContext.Provider>

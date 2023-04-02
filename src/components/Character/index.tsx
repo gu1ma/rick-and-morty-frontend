@@ -14,7 +14,7 @@ export default function Character({ imgUrl, name, desc }: CharacterProps) {
                 src={`${imgUrl}`}
                 width={250}
                 height={250}
-                alt="Rick and Morty Logo"
+                alt={name}
             />
             <h2>{name}</h2>
             <p>{desc}</p>
