@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
 import Title from '.'
  
-describe('Title', () => {
-    it('should render title correctly', () => {
+describe('@Components @Title', () => {
+    it('should render component correctly', () => {
         const { getByText } = render(
             <Title>John Doe</Title>
         )
