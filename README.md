@@ -1,38 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Rick and Morty Application
+Esta é uma aplicação simples que lista os personagens da série Rick and Morty.<br><br>
+<img width="800" alt="Captura de Tela 2023-04-03 às 16 40 33" src="https://user-images.githubusercontent.com/27930240/229610449-6d04d535-b7cd-49f6-bfcb-a7232ac84ed7.png">
 
-## Getting Started
+### Features
+1. No campo de busca, é possível efetuar a busca de acordo com o nome de determinado personagem
+2. A página tem um scrollinfinito que busca os personagens de acordo com o scoll 
+3. Ao clicar em um personagem, o usuário é redirecionado para outra página contendo mais informações sobre o mesmo
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Como usar
+1. Faça o clone desse repositorio `git clone https://github.com/gu1ma/rick-and-morty-frontend.git`
+2. Dentro da pasta do projeto, rode `npm install` ou `yarn` para instalar as dependencias 
+3. Rode `npm run dev` ou `yarn dev` para startar a aplicação
+4. Rode `npm run test` ou `yarn test` para rodar os testes unitários
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Tecnologias usadas 
+- React 
+- Redux 
+- ContextAPI
+- Jest 
+- Stitches
