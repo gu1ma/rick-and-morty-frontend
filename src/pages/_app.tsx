@@ -1,4 +1,4 @@
-import HeaderComponent from '../components/Header';
+import HeaderComponent from '../components/header';
 import { CharactersProvider } from '../providers/characters';
 import { globalStyles } from '../styles/global'
 import type { AppProps } from 'next/app'
