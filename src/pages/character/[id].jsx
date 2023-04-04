@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { CharactersContext } from '@/providers/characters'
+import { CharactersContext } from '../../providers/characters'
 import { useState } from "react";
-import { styled } from '@/styles'
+import { styled } from '../../styles'
 
 const Container = styled('div', {
     padding: '15px',

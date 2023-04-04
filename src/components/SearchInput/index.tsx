@@ -1,4 +1,4 @@
-import { CharactersContext } from "@/providers/characters";
+import { CharactersContext } from "../../providers/characters";
 import { useContext } from "react";
 import { Input } from "./style";
 

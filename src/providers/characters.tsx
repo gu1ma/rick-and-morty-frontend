@@ -1,4 +1,4 @@
-import { getCharactersApi, getCharactersByNameApi } from "@/services";
+import { getCharactersApi, getCharactersByNameApi } from '../services';
 import React, { ReactNode, useEffect, useState, useCallback } from "react";
 
 interface ICharactersContextProps {

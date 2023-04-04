@@ -1,7 +1,7 @@
-import { api } from "@/lib/axios"
+import { api } from "../lib/axios"
 import { getCharactersApi, getCharactersByNameApi } from "."
 
-jest.mock("@/lib/axios", () => {
+jest.mock("../lib/axios", () => {
 return {
     api: {
         get: jest.fn(url => null)

@@ -1,9 +1,10 @@
-import SearchInput from '@/components/SearchInput'
+import SearchInput from '../components/SearchInput'
 import { fireEvent, render } from '@testing-library/react'
 import { CharactersProvider } from './characters'
 
-import { getCharactersByNameApi, getCharactersApi } from "@/services";
-jest.mock("@/services", () => {
+
+import { getCharactersByNameApi, getCharactersApi } from '../services';
+jest.mock("../services", () => {
 return {
     getCharactersApi: jest.fn(() => new Promise(() => {
         result: {
