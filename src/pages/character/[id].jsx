@@ -5,8 +5,31 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { CharactersContext } from '@/providers/characters'
 import { useState } from "react";
+import { styled } from '@/styles'
 
-import { Container, Name, ContainerCharacter, Description } from "./style";
+const Container = styled('div', {
+    padding: '15px',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+})
+
+const ContainerCharacter = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+});
+
+const Name = styled('h1', {
+    fontSize: 40,
+    color: '$secondary',
+    marginTop: 8
+})
+
+const Description = styled('p', {
+    fontSize: 22,
+    color: 'white',
+    marginTop: 4
+})
 
 export default function Character() {
 
